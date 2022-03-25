@@ -1,0 +1,21 @@
+2022-03-23 23:44:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "COMPAMY_ID" not found; SQL statement:
+SELECT * FROM CAR WHERE COMPAMY_ID=1 [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:190)
+	at org.h2.command.dml.Select.prepare(Select.java:1209)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:78)
+	at carsharing.CarDaoImpl.getCarsByCompany(CarDaoImpl.java:75)
+	at carsharing.CompanyMenu.lambda$new$1(CompanyMenu.java:15)
+	at carsharing.Action.execute(Action.java:18)
+	at carsharing.CompanyMenu.selectAction(CompanyMenu.java:44)
+	at carsharing.Main.main(Main.java:32)
